@@ -6,18 +6,12 @@ import Nav from './Nav';
 
 const Header = () => {
   const value = useContext(ValueContext);
-  console.log(value);
   return (
-    <ParentHeader style={{ background: `${value.color}` }}>
+    <ParentHeader>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <NavLink to="/">
           <img className="logo" src={value.logoUrl} alt="LOGO" />
         </NavLink>
-        <span
-          style={{ fontSize: '1.5rem', fontWeight: 'bold', marginLeft: '30px' }}
-        >
-          {value.title}
-        </span>
       </div>
       <Nav />
     </ParentHeader>
@@ -25,8 +19,8 @@ const Header = () => {
 };
 
 const ParentHeader = styled.header`
-  padding: 0 2rem;
-  height: 5rem;
+  padding: 0 10rem;
+  height: 7rem;
   background-color: #f6f8fa;
   display: flex;
   justify-content: space-between;

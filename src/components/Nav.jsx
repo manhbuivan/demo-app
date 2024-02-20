@@ -22,6 +22,22 @@ const Nav = () => {
               About
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/"
+              className='nav-link'
+            >
+              Blog
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/about"
+              className='nav-link'
+            >
+              Contact
+            </NavLink>
+          </li>
         </ul>
       </div >
     </>

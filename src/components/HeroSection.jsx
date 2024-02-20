@@ -1,22 +1,25 @@
 import { NavLink } from "react-router-dom";
 import "../global.css";
 import { Button } from "../styles/Button";
+import { useContext } from "react";
+import { ValueContext } from "../App";
 
 const HeroSection = (props) => {
   const { myData } = props
+  const value = useContext(ValueContext);
   return (
     <>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <div className="container">
           <div style={{ display: 'flex' }}>
             <div className="hero-section-data">
-              <p>{myData.first}</p>
+              <p style={{ fontSize: 20 }}>{myData.first}</p>
               <h1>{myData.second}</h1>
               <p>
                 {myData.fourth}
               </p>
               <NavLink>
-                <Button>{myData.third}</Button>
+                <Button style={{ backgroundColor: value.color }}>{myData.third}</Button>
               </NavLink>
             </div>
             <div className="hero-section-image">

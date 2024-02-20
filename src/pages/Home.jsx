@@ -1,15 +1,21 @@
+import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { ValueContext } from '../App';
 import HeroSection from '../components/HeroSection';
 import logo from '../images/3d.png';
 
 const Home = () => {
   const { t } = useTranslation();
+  const value = useContext(ValueContext);
 
   return (
-    <div style={{ padding: '10rem' }}>
+    <div>
+      <div style={{ textAlign: 'center' }}>
+        <h1 style={{ fontSize: 50 }}>{value.title}</h1>
+      </div>
       <HeroSection
         myData={{
           first: t('直属推广人数'),
@@ -22,6 +28,20 @@ const Home = () => {
         imgsrc={logo}
         top="0rem"
       />
+      <HeroSection
+        myData={{
+          first: t('总充值'),
+          second: t('玩家亏损'),
+          third: t('我的排名'),
+          fourth: t(
+            '您当前使用的货币为{0}将会折算成等价的美元进入游戏'
+          ),
+        }}
+        imgsrc={logo}
+        top="0rem"
+        left
+      />
+
     </div>
   );
 };

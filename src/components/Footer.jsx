@@ -1,12 +1,9 @@
-import { useContext } from 'react';
-import { ValueContext } from '../App';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
-  const value = useContext(ValueContext);
   const { t } = useTranslation();
   return (
-    <div style={{ background: `${value.color}` }}>
+    <div style={{ background: `#f6f8fa` }}>
       <footer style={{ padding: '0 0 0 50px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div>
