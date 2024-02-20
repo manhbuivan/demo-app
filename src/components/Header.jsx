@@ -2,14 +2,18 @@ import styled from 'styled-components';
 import logo from '../logo.svg';
 import { NavLink } from 'react-router-dom';
 import Nav from './Nav';
+import { useContext } from 'react';
+import { ValueContext } from '../App';
 
 const Header = () => {
+  const value = useContext(ValueContext)
+  console.log(value.color)
   return (
-    <ParentHeader>
+    <ParentHeader style={{ background: `${value.color}` }}>
       <NavLink to="/">
         <img className="logo" src={logo} alt="LOGO" />
       </NavLink>
-      <Nav/>
+      <Nav />
     </ParentHeader>
   );
 };
